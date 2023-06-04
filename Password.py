@@ -15,28 +15,25 @@ class by():
     print('\t\t\t\t\t''GitHub:','https://github.com/suchsoak','\n')
 
 class password():
-    Type = input('Strong or Weak Passwords: ')
     try:
-        if Type == 'Strong' or 'strong':
+        Type = input('Strong or Weak Passwords: ')
+        if Type == "Strong" or Type == "strong":
+            print('[*] strong')
             words = string.ascii_lowercase + string.digits + string.punctuation
             Quantity = input('Quantity: ')
             time.sleep(0.2)
             Password = "".join(random.choices(words, k=int(Quantity)))
             print('-----------------')
-            print('Your password: ', Password)
+            print('Your STRONG password: ', Password)
             print('-----------------')
-        elif Type == 'Weak' or 'weak':
-                words = string.ascii_lowercase 
-                Quantity = input('Quantity: ')
-                Password = "".join(random.choices(words, k=int(Quantity)))
-                print('-----------------')
-                print('your password: ', Password())
-                print('-----------------')
-    except KeyboardInterrupt:
-        print('\n')
-        print('Program stopped')
+        elif Type == "Weak" or Type == "weak":
+                    print('--------------')
+                    print('[*] Weak')
+                    words = string.ascii_lowercase 
+                    Quantity = input('Quantity: ')
+                    Password = "".join(random.choices(words, k=int(Quantity)))
+                    print('-----------------')
+                    print('your weak password: ', Password)
+                    print('-----------------')
     except Exception as error:
          print(error)
-   
-
-         
