@@ -19,7 +19,7 @@ class password():
             time.sleep(0.2)
             Password = "".join(random.choices(words, k=int(Quantity)))
             print('-----------------')
-            print('Sua senha: ', Password)
+            print('Your Password: ', Password)
             print('-----------------')
         elif Type == 'Weak' or 'weak':
                 words = string.ascii_lowercase 
