@@ -2,14 +2,18 @@ import random
 import string
 import time
 # The simple random password with python
-print("   _ \\                                                 |        ___|  |                              ")
+# Password = https://texteditor.com/multiline-text-art/
+print("   _ \\                                                  |        ___|  |                              ")
 print(" |   |  _` |   __|   __| \\ \\  \\   /   _ \\    __|   _` |      \\___ \\  __|   __|   _ \\   __ \\    _  | ")
 print(" ___/  (   | \\__ \\ \\__ \\  \\ \\  \\ /   (   |  |     (   |            | |    |     (   |  |   |  (   | ")
 print("_|    \\__._| ____/ ____/   \\_/\\_/   \\___/  _|    \\__._|      _____/ \\__| _|    \\___/  _|  _| \\__. | ")
 print("                                                                                             |___/  ")
-    
-print('BY: ~#M?x')
-print('GitHub:','https://github.com/suchsoak','\n')
+
+class by():    
+    print('\n')
+    print('\t\t\t\t\t''BY: ~#M?x')
+    print('\t\t\t\t\t''GitHub:','https://github.com/suchsoak','\n')
+
 class password():
     Type = input('Strong or Weak Passwords: ')
     try:
@@ -19,7 +23,7 @@ class password():
             time.sleep(0.2)
             Password = "".join(random.choices(words, k=int(Quantity)))
             print('-----------------')
-            print('Your Password: ', Password)
+            print('Your password: ', Password)
             print('-----------------')
         elif Type == 'Weak' or 'weak':
                 words = string.ascii_lowercase 
@@ -29,7 +33,8 @@ class password():
                 print('your password: ', Password())
                 print('-----------------')
     except KeyboardInterrupt:
-        print('Programa interrompido!')
+        print('\n')
+        print('Program stopped')
     except Exception as error:
          print(error)
    
