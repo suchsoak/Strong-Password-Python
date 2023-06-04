@@ -18,22 +18,27 @@ class password():
     try:
         Type = input('Strong or Weak Passwords: ')
         if Type == "Strong" or Type == "strong":
-            print('[*] strong')
-            words = string.ascii_lowercase + string.digits + string.punctuation
+            print('--------------')
+            print('[!] strong')
+            print('--------------')
+            words = string.ascii_lowercase + string.digits + string.punctuation + string.ascii_uppercase
             Quantity = input('Quantity: ')
             time.sleep(0.2)
             Password = "".join(random.choices(words, k=int(Quantity)))
             print('-----------------')
-            print('Your STRONG password: ', Password)
+            print('[!] Your STRONG password: ', '|', Password, '|')
             print('-----------------')
         elif Type == "Weak" or Type == "weak":
-                    print('--------------')
-                    print('[*] Weak')
-                    words = string.ascii_lowercase 
-                    Quantity = input('Quantity: ')
-                    Password = "".join(random.choices(words, k=int(Quantity)))
-                    print('-----------------')
-                    print('your weak password: ', Password)
-                    print('-----------------')
+                            print('--------------')
+                            print('[!] Weak')
+                            print('--------------')
+                            words = string.ascii_lowercase + string.ascii_uppercase
+                            Quantity = input('Quantity: ')
+                            Password = "".join(random.choices(words, k=int(Quantity)))
+                            print('-----------------')
+                            print('[!] your weak password: ', '|', Password, '|')
+                            print('-----------------')
+    except KeyboardInterrupt:
+        print('program stopped')
     except Exception as error:
          print(error)
