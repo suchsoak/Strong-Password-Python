@@ -3,7 +3,7 @@
 
  When running the script, you will have the option to choose the letter count and even whether it will be a weak or strong password.
  
- In order for you not to forget your password, you may need to put it in a txt file. In the future I will make an option to save the password in a txt file.
+So you don't forget your password, I put it in a txt file "password.txt".
 
 > This script will be updated over time, so I'll do it better.
 
