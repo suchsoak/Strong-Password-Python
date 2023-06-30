@@ -31,6 +31,7 @@ You will choose the number of words
 ```sh
  Quantity:
 ```
+### So that's it, take advantage of your strong passwords. Goodbye.
 
 <br>
 
@@ -39,3 +40,4 @@ You will choose the number of words
 | random | https://docs.python.org/3/library/random.html 
 | string| https://docs.python.org/3/library/string.html 
 | time | https://docs.python.org/3/library/time.html
+| colorama | https://pypi.org/project/colorama/)https://pypi.org/project/colorama/
