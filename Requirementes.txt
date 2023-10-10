@@ -1,3 +1,4 @@
+zxcvbn
 colorama
 os
 time
