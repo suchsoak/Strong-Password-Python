@@ -1,2 +1,5 @@
-pip 23.1.2
-python 3.11
+colorama
+os
+time
+string
+random
