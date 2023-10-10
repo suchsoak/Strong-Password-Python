@@ -13,6 +13,10 @@ So you don't forget your password, I put it in a txt file "password.txt".
 
 ```sh
  git clone https://github.com/suchsoak/Strong-Password-Python.git
+
+```
+```sh
+ pip install -r Requirementes.txt  
 ```
 
 # How use
@@ -20,6 +24,7 @@ So you don't forget your password, I put it in a txt file "password.txt".
 ```sh
  Python3 Password.py
 ```
+
 You will choose Strong or Weak
 
 ```sh
@@ -29,8 +34,9 @@ You will choose Strong or Weak
 You will choose the number of words
 
 ```sh
- Quantity:
+ Quantity: 
 ```
+
 ### So that's it, take advantage of your strong passwords. Goodbye.
 
 <br>
