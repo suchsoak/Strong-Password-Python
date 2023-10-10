@@ -1,11 +1,10 @@
 # Strong Password With Python
-# The strong random password with python.
 
- When running the script, you will have the option to choose the letter count and even whether it will be a weak or strong password.
+The strong random password with python.
+
+When running the script, you will have the option to choose the letter count and even whether it will be a weak or strong password.
  
 So you don't forget your password, I put it in a txt file "password.txt".
-
-> This script will be updated over time, so I'll do it better.
 
 # Install
 
