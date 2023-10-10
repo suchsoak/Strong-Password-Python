@@ -18,7 +18,7 @@ So you don't forget your password, I put it in a txt file "password.txt".
  pip install -r Requirementes.txt  
 ```
 
-# How use
+# How to use
 
 ```sh
  Python3 Password.py
