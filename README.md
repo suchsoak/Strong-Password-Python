@@ -6,6 +6,8 @@ When running the script, you will have the option to choose the letter count and
  
 So you don't forget your password, I put it in a txt file "password.txt".
 
+[![Update](https://github.com/suchsoak/Strong-Password-Python/actions/workflows/main.yml/badge.svg)](https://github.com/suchsoak/Strong-Password-Python/actions/workflows/main.yml)
+
 # Install
 
 > Install with git
