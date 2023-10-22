@@ -15,7 +15,7 @@ So you don't forget your password, I put it in a txt file "password.txt".
 
 ```
 ```sh
- pip install -r requirementes.txt  
+ pip install -r requirements.txt  
 ```
 
 # Usage
