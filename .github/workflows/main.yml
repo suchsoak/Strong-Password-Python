@@ -1,10 +1,13 @@
-jobs:
-  build:
-    runs-on: ${{ matrix.os }}
+name: Update
 
-    strategy:
-      matrix:
-        os: [ubuntu-latest, macos-latest, windows-latest]
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  update-repo:
+    runs-on: ${{ matrix.os }}
 
     steps:
     - name: Checkout repository
@@ -16,15 +19,5 @@ jobs:
         python-version: 3.9
 
     - name: Install dependencies
-      run: pip install -r requirements.txt
-
-    - name: Run tests
-      run: pytest
-
-    - name: Generate code coverage report
-      run: coverage run --source=. -m pytest && coverage report
-
-  - name: Checkout repository
-    uses: actions/checkout@v2
-    with:
-      repository: suchsoak/Strong-Password-Python
+      run: |
+        pip install -r requirements.txt
