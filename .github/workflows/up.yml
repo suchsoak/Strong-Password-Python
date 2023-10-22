@@ -1,0 +1,34 @@
+jobs:
+  build:
+    runs-on: ${{ matrix.os }}
+
+    strategy:
+      matrix:
+        os: [ubuntu-latest, macos-latest, windows-latest]
+
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v2
+
+    - name: Set up Python
+      uses: actions/setup-python@v2
+      with:
+        python-version: 3.9
+
+    - name: Install dependencies
+      run: pip install -r requirements.txt
+
+    - name: Run tests
+      run: pytest
+      
+   - name: Password
+      run: python3 Password.py
+      
+    - name: Generate code coverage report
+      run: coverage run --source=. -m pytest && coverage report
+
+  - name: Checkout repository
+    uses: actions/checkout@v2
+    with:
+      repository: suchsoak/Wifi-Info-PY
+      
