@@ -1,14 +1,15 @@
 # Strong Password With Python
+[![Update](https://github.com/suchsoak/Strong-Password-Python/actions/workflows/main.yml/badge.svg)](https://github.com/suchsoak/Strong-Password-Python/actions/workflows/main.yml)
 
 The strong random password with python.
 
 When running the script, you will have the option to choose the letter count and even whether it will be a weak or strong password.
- 
-So you don't forget your password, I put it in a txt file "password.txt".
 
-[![Update](https://github.com/suchsoak/Strong-Password-Python/actions/workflows/main.yml/badge.svg)](https://github.com/suchsoak/Strong-Password-Python/actions/workflows/main.yml)
+>[!NOTE]
+>So you don't forget your password, I put it in a txt file "password.txt".
 
-# Install
+
+# How To Install
 
 > Install with git
 
@@ -25,8 +26,11 @@ So you don't forget your password, I put it in a txt file "password.txt".
 ```sh
  Python3 Password.py
 ```
+  **You will choose [1] Strong or [2] Weak**
 
-You will choose Strong or Weak
+<p align="center">
+  <img src="https://github.com/suchsoak/Strong-Password-Python/blob/main/passwordpy.png" alt="passwordpy.png">
+</p>
 
 ```sh
  Strong or Weak Passwords:
@@ -35,8 +39,28 @@ You will choose Strong or Weak
 You will choose the number of words
 
 ```sh
- Quantity:
+ __________                                                ___
+\______   \____    ______ _______  _  __ ____ _______  __| _/
+ |     ___/__  \  /  ___//  ___/ \/ \/ // __ \_  __ \/ __ | 
+ |    |    / __ \_\___ \ \___ \ \     /(  \_\ )|  | \/ /_/ | 
+ |____|   (____  /____  \____  \ \/\_/  \____/ |__|  \____ | 
+               \/     \/     \/                           \/ 
+BY: suchsoak
+Github: https://github.com/suchsoak                          
+v.1.0.1
+
+[1] Strong
+[2] Weak
+
+Strong or Weak Passwords: 1
+
+--------------
+[!] Strong
+--------------
+
+Quantity: 20
 ```
+
 
 # Information About zxcvbn 
 
@@ -113,6 +137,73 @@ sequence: A sequence of tokens (parts) of the password that were individually an
     }],
 }
  
+```
+
+## Example in the script
+
+```sh
+__________                                                ___
+\______   \____    ______ _______  _  __ ____ _______  __| _/
+ |     ___/__  \  /  ___//  ___/ \/ \/ // __ \_  __ \/ __ | 
+ |    |    / __ \_\___ \ \___ \ \     /(  \_\ )|  | \/ /_/ | 
+ |____|   (____  /____  \____  \ \/\_/  \____/ |__|  \____ | 
+               \/     \/     \/                           \/ 
+BY: suchsoak
+Github: https://github.com/suchsoak                          
+v.1.0.1
+
+[1] Strong
+[2] Weak
+
+Strong or Weak Passwords: 1
+
+--------------
+[!] Strong
+--------------
+
+Quantity: 20
+
+-----------------
+[!] Your STRONG password:  21GJu>*KrjeC{hds"~ca
+-----------------
+
+[*] Your Password is saven in: password.txt
+
+[*] Information about your password:
+	
+{
+    "calc_time": "0:00:00.005670",
+    "crack_times_display": {
+        "offline_fast_hashing_1e10_per_second": "centuries",
+        "offline_slow_hashing_1e4_per_second": "centuries",
+        "online_no_throttling_10_per_second": "centuries",
+        "online_throttling_100_per_hour": "centuries"
+    },
+    "crack_times_seconds": {
+        "offline_fast_hashing_1e10_per_second": "10000000000.0000000001",
+        "offline_slow_hashing_1e4_per_second": "10000000000000000.0001",
+        "online_no_throttling_10_per_second": "10000000000000000000.1",
+        "online_throttling_100_per_hour": "3600000000000000199876.144433"
+    },
+    "feedback": {
+        "suggestions": [],
+        "warning": ""
+    },
+    "guesses": 100000000000000000001,
+    "guesses_log10": 20.0,
+    "password": "21GJu>*KrjeC{hds\"~ca",
+    "score": 4,
+    "sequence": [
+        {
+            "guesses": 100000000000000000000,
+            "guesses_log10": 20.0,
+            "i": 0,
+            "j": 19,
+            "pattern": "bruteforce",
+            "token": "21GJu>*KrjeC{hds\"~ca"
+        }
+    ]
+}
 ```
 
 ### So that's it, take advantage of your strong passwords. Goodbye.
