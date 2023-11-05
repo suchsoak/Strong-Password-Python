@@ -26,17 +26,15 @@ When running the script, you will have the option to choose the letter count and
 ```sh
  Python3 Password.py
 ```
-  **You will choose [1] Strong or [2] Weak**
+
+## You will choose [1] Strong or [2] Weak
 
 <p align="center">
   <img src="https://github.com/suchsoak/Strong-Password-Python/blob/main/passwordpy.png" alt="passwordpy.png">
 </p>
 
-```sh
- Strong or Weak Passwords:
-```
 
-You will choose the number of words
+## You will choose the number of words
 
 ```sh
  __________                                                ___
