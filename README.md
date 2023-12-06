@@ -27,12 +27,40 @@ When running the script, you will have the option to choose the letter count and
  Python3 Password.py
 ```
 
-## You will choose [1] Strong or [2] Weak
+## You will choose [1] Strong, [2] Weak or [3] Have i been pwned
 
-<p align="center">
-  <img src="https://github.com/suchsoak/Strong-Password-Python/blob/main/passwordpy.png" alt="passwordpy.png">
-</p>
+```sh
 
+__________                                                ___
+\______   \____    ______ _______  _  __ ____ _______  __| _/
+ |     ___/__  \  /  ___//  ___/ \/ \/ // __ \\_  __ \/ __ | 
+ |    |    / __ \_\___ \ \___ \ \     /(  \_\ )|  | \/ /_/ | 
+ |____|   (____  /____  \____  \ \/\_/  \____/ |__|  \____ | 
+               \/     \/     \/                           \/ 
+BY: suchsoak
+Github: https://github.com/suchsoak       
+V.1.0.2                   
+
+[1] Strong
+[2] Weak
+[3] Have i been pwned
+
+....................~~...~. .. 
+........... .. .~.....  . +~   
+......... ....~.~. ........~.  
+...... . ......  ......... .   
+......~~~~.~~~~......... .~. . 
+....~~~~~~~~~..~~~~~~  ... . . 
+..~~~+~~~~~.~~~~~+oooo++~.....
+~~~~~~~~~.~.~~~+++ooooo++.....
+..~~~~~~~.~~+~+++ooo+++~......
+... . ..~~~+++++oo+++.........
+.....  . .++++ooo+~. .........
+........ . .~++~.. ...........
+........... .~.. .............
+'''
+
+```
 
 ## You will choose the number of words
 
@@ -45,10 +73,11 @@ When running the script, you will have the option to choose the letter count and
                \/     \/     \/                           \/ 
 BY: suchsoak
 Github: https://github.com/suchsoak                          
-v.1.0.1
+v.1.0.2
 
 [1] Strong
 [2] Weak
+[3] Have i been pwned
 
 Strong or Weak Passwords: 1
 
@@ -148,10 +177,11 @@ __________                                                ___
                \/     \/     \/                           \/ 
 BY: suchsoak
 Github: https://github.com/suchsoak                          
-v.1.0.1
+v.1.0.2
 
 [1] Strong
 [2] Weak
+[3] Have i been pwned
 
 Strong or Weak Passwords: 1
 
@@ -208,6 +238,11 @@ Quantity: 20
 
 <br>
 
+License & Copyright
+-----------------------
+MIT License Copyright (c) 2023 ~#M?x
+
+
 | Libraries |  Links |
 | ------ | ------ |
 | random | https://docs.python.org/3/library/random.html 
@@ -216,3 +251,5 @@ Quantity: 20
 | zxcvn | https://pypi.org/project/zxcvbn
 | Json | https://docs.python.org/3/library/json.html
 | colorama | https://pypi.org/project/colorama/)https://pypi.org/project/colorama/
+| requests | https://pypi.org/project/requests/
+| hashlib  | https://docs.python.org/3/library/hashlib.html 
