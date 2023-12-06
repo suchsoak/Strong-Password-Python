@@ -48,7 +48,7 @@ class password():
     try:
         colorama.init()
         print(Fore.RED)
-        Type = input('Strong or Weak Passwords: ')
+        Type = input('Strong, Weak or Have i been pwned: ')
         print(Style.RESET_ALL)
         print(Style.RESET_ALL)
         if Type == "1":
