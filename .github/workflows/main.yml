@@ -18,9 +18,6 @@ jobs:
       with:
         python-version: 3.9 
         
-  - name: pip upgrade
-      run: pip install --upgrade pip
-
     - name: Install dependencies
       run: |
         pip install -r requirements.txt
