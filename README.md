@@ -27,6 +27,9 @@ When running the script, you will have the option to choose the letter count and
  Python3 Password.py
 ```
 
+>[!IMPORTANT]
+>Keep in mind that for it to work you need to install hashlib and requests to work
+
 ## You will choose [1] Strong, [2] Weak or [3] Have i been pwned
 
 ```sh
@@ -79,7 +82,7 @@ v.1.0.2
 [2] Weak
 [3] Have i been pwned
 
-Strong or Weak Passwords: 1
+Strong, Weak or Have i been pwned: 1
 
 --------------
 [!] Strong
@@ -183,7 +186,7 @@ v.1.0.2
 [2] Weak
 [3] Have i been pwned
 
-Strong or Weak Passwords: 1
+Strong, Weak or Have i been pwned: 1
 
 --------------
 [!] Strong
@@ -234,9 +237,46 @@ Quantity: 20
 }
 ```
 
-### So that's it, take advantage of your strong passwords. Goodbye.
+# Have i been pwned
 
-<br>
+```sh
+
+ print("Have I Been Pwned")
+            Password = Password
+            hash_password = hashlib.sha1(Password.encode('utf-8')).hexdigest().upper()
+            url = f"https://api.pwnedpasswords.com/range/{hash_password[:5]}"
+            req = requests.get(url)
+            hashes = req.text.split('\n')
+            pwned = False
+            for hash in hashes:
+                if hash.startswith(hash_password[5:]):
+                    pwned = True
+                    break
+            if pwned:
+                print("[!] Yes, your password has been pwned.")
+            else:
+                print("[!] No, your password has not been pwned.")
+            time.sleep(2)
+```
+
+### You can now put an option to verify a specific password of yours that you may or may not have already leaked on the dark web
+
+```sh
+
+Strong, Weak or Have i been pwned: 3
+
+            /\   /\                       __ ___                                                            ___
+            /  |_|  \_____  ___  __ ____  |__|\_ |__   ____   ____   ____  ______ __  _  __ ____   ____   __| _/
+            /         \__  \ \  \/ // __ \ |  | | __ \_/ __ \_/ __ \ /    \ \____ \ \/ \/ //    \_/ __ \ / __ |
+            \    _    // __ \_\   /\  ___/_|  | | \_\ \  ___/_  ___/_   |  \|  |_\ \     /|   |  \  ___/_ /_/ |
+            \  | |  /(____  / \_/  \___  /|__| |___  /\___  /\___  /___|  /|   ___/ \/\_/ |___|  /\___  /____ |
+            \/   \/      \/           \/          \/     \/     \/     \/ |__|                \/     \/     \/
+
+
+Put your PASSWORD:
+
+```
+### So that's it, take advantage of your strong passwords. Goodbye.
 
 License & Copyright
 -----------------------
