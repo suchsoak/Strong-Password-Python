@@ -3,7 +3,7 @@
 
 The strong random password with python.
 
-When running the script, you will have the option to choose the letter count and even whether it will be a weak or strong password.
+**When you run the script, you'll have the option to choose the letter count and even whether it will be a weak or strong password and check your password on Have I Been Pwned.**
 
 >[!NOTE]
 >So you don't forget your password, I put it in a txt file "password.txt".
