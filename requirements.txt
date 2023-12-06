@@ -1,4 +1,3 @@
 zxcvbn
 colorama
 requests
-hashlib
