@@ -4,9 +4,15 @@ import requests
 import hashlib
 import time
 import json
+import os
 import colorama
 from colorama import Fore, Style
 from zxcvbn import zxcvbn
+
+clear = os.system("clear")
+
+if clear == True:
+     os.system("cls")
 
 colorama.init()
 print(Fore.RED)
@@ -20,25 +26,14 @@ __________                                                ___
                \/     \/     \/                           \/ 
 BY: suchsoak
 Github: https://github.com/suchsoak       
-V.1.0.2                   
+V.1.0.3                   
 
 [1] Strong
 [2] Weak
-[3] Have i been pwned
-
-....................~~...~. .. 
-........... .. .~.....  . +~   
-......... ....~.~. ........~.  
-...... . ......  ......... .   
-......~~~~.~~~~......... .~. . 
-....~~~~~~~~~..~~~~~~  ... . . 
-..~~~+~~~~~.~~~~~+oooo++~.....
-~~~~~~~~~.~.~~~+++ooooo++.....
-..~~~~~~~.~~+~+++ooo+++~......
-... . ..~~~+++++oo+++.........
-.....  . .++++ooo+~. .........
-........ . .~++~.. ...........
-........... .~.. .............
+[3] Email (API)
+[4] Email Hash
+[5] Company
+[6] Have i been pwned
 '''
 
 print(password1)
@@ -48,7 +43,7 @@ class password():
     try:
         colorama.init()
         print(Fore.RED)
-        Type = input('Strong, Weak or Have i been pwned: ')
+        Type = input('Put the number: ')
         print(Style.RESET_ALL)
         print(Style.RESET_ALL)
         if Type == "1":
@@ -142,16 +137,64 @@ class password():
                             time.sleep(1)
                             print(formatted_results)
                             print()
+
         elif Type == '3':
+                email = input("Put the email:")
+                API = input("Put your API key:")
+                url = f"https://haveibeenpwned.com/api/v3/breachedaccount/{email}"
+                headers = {"hibp-api-key": "{API}"}  
+                response = requests.get(url, headers=headers)
+                if response.status_code == 200:
+                    print("[!] Yes, your email has been pwned.")
+                elif response.status_code == 404:
+                    print("[!] No, your email has not been pwned.")
+                else:
+                    print("[!] Error occurred while checking for pwnage.")
+                    
+        elif Type == '4':
+            email_1 = input("Put your Email:" )
+            colorama.init()
+            print(Fore.RED)
+            print("\t")
+            Email = email_1
+            hash_password = hashlib.sha1(Email.encode('utf-8')).hexdigest().upper()
+            url = f"https://api.pwnedpasswords.com/range/{hash_password[:5]}"
+            req = requests.get(url)
+            hashes = req.text.split('\n')
+            pwned = False
+            for hash in hashes:
+                if hash.startswith(hash_password[5:]):
+                    pwned = True
+                    break
+            if pwned: 
+                print("[!] Yes, your email has been pwned.")
+            else:
+                print("[!] No, your email has not been pwned.")
+                  
+        elif Type == '5':
+             import os as s
+             Company = input("Put the Company:")
+             url_company = (f'{Company}')
+             if url_company:
+                  s.system(f'\ncurl https://haveibeenpwned.com/api/v3/breach/{Company}\n')
+                  if Company == None:
+                       print("\nHad a problem, check if you have curl.\n")
+             if url_company == None:
+                  print("\nHad a problem\n")
+             else:
+                print(f"\nDon't have nothing about this company: {Company}\n")
+
+        elif Type == '6':
             colorama.init()
             print(Fore.BLUE)
             have = '''
-            /\   /\                       __ ___                                                            ___
-            /  |_|  \_____  ___  __ ____  |__|\_ |__   ____   ____   ____  ______ __  _  __ ____   ____   __| _/
-            /         \__  \ \  \/ // __ \ |  | | __ \_/ __ \_/ __ \ /    \ \____ \\ \/ \/ //    \_/ __ \ / __ | 
-            \    _    // __ \_\   /\  ___/_|  | | \_\ \  ___/_  ___/_   |  \|  |_\ \\     /|   |  \  ___/_ /_/ | 
-            \  | |  /(____  / \_/  \___  /|__| |___  /\___  /\___  /___|  /|   ___/ \/\_/ |___|  /\___  /____ | 
-            \/   \/      \/           \/          \/     \/     \/     \/ |__|                \/     \/     \/ 
+                                              ___
+            ______ __  _  __ ____   ____   __| _/
+            \____ \\ \/ \/ //    \_/ __ \ / __ | 
+            |  |_\ \\     /|   |  \  ___/_ /_/ | 
+            |   ___/ \/\_/ |___|  /\___  /____ | 
+            |__|                \/     \/     \/ 
+
             '''
             print(have)
             print(Style.RESET_ALL)
@@ -170,7 +213,7 @@ class password():
                 if hash.startswith(hash_password[5:]):
                     pwned = True
                     break
-            if pwned:
+            if pwned: 
                 print("[!] Yes, your password has been pwned.")
             else:
                 print("[!] No, your password has not been pwned.")
@@ -178,9 +221,10 @@ class password():
         else:
               colorama.init()
               print(Fore.RED)
-              print("You need chosse 1 or 2")
+              print("You need chosse a number")
               print(Style.RESET_ALL)
               print()
+
     except KeyboardInterrupt:
         print('program stopped')
     except Exception as error:
