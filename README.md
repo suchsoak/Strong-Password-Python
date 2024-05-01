@@ -30,7 +30,7 @@ The strong random password with python.
 >[!IMPORTANT]
 >Keep in mind that for it to work you need to install hashlib and requests to work
 
-## You will choose [1] Strong, [2] Weak or [3] Have i been pwned
+#### You will choose [1] Strong, [2] Weak, [3] Email (API), [4] Email Hash, [5] Company or [6] Have i been pwned
 
 ```sh
 
@@ -42,28 +42,19 @@ __________                                                ___
                \/     \/     \/                           \/ 
 BY: suchsoak
 Github: https://github.com/suchsoak       
-V.1.0.2                   
+V.1.0.3                   
 
 [1] Strong
 [2] Weak
-[3] Have i been pwned
-
-....................~~...~. .. 
-........... .. .~.....  . +~   
-......... ....~.~. ........~.  
-...... . ......  ......... .   
-......~~~~.~~~~......... .~. . 
-....~~~~~~~~~..~~~~~~  ... . . 
-..~~~+~~~~~.~~~~~+oooo++~.....
-~~~~~~~~~.~.~~~+++ooooo++.....
-..~~~~~~~.~~+~+++ooo+++~......
-... . ..~~~+++++oo+++.........
-.....  . .++++ooo+~. .........
-........ . .~++~.. ...........
-........... .~.. .............
-'''
+[3] Email (API)
+[4] Email Hash
+[5] Company
+[6] Have i been pwned
 
 ```
+<details>
+ 
+<summary>Password</summary>
 
 ## You will choose the number of words
 
@@ -76,13 +67,16 @@ V.1.0.2
                \/     \/     \/                           \/ 
 BY: suchsoak
 Github: https://github.com/suchsoak                          
-v.1.0.2
+v.1.0.3
 
 [1] Strong
 [2] Weak
-[3] Have i been pwned
+[3] Email (API)
+[4] Email Hash
+[5] Company
+[6] Have i been pwned
 
-Strong, Weak or Have i been pwned: 1
+Put the namber: 1
 
 --------------
 [!] Strong
@@ -180,13 +174,16 @@ __________                                                ___
                \/     \/     \/                           \/ 
 BY: suchsoak
 Github: https://github.com/suchsoak                          
-v.1.0.2
+v.1.0.3
 
 [1] Strong
 [2] Weak
-[3] Have i been pwned
+[3] Email (API)
+[4] Email Hash
+[5] Company
+[6] Have i been pwned
 
-Strong, Weak or Have i been pwned: 1
+Put the namber: 1
 
 --------------
 [!] Strong
@@ -236,6 +233,108 @@ Quantity: 20
     ]
 }
 ```
+</details>
+
+<details>
+ 
+<summary>Email</summary>
+
+# Email API
+
+### This is a request to find out if your email has been leaked on the dark web, using the Have i Been pwned API. But for that you need the API key
+
+#### Then, You will put the email and your API key
+
+>You need have the API key
+
+```sh
+   Put your API key: admin@gmail.com
+```
+```sh
+   Put your API key: 01010.00100.010.101
+```
+
+>Part of the script
+
+```sh
+
+ email = input("Put the email:")
+                API = input("Put your API key:")
+                url = f"https://haveibeenpwned.com/api/v3/breachedaccount/{email}"
+                headers = {"hibp-api-key": "{API}"}  
+```
+
+# Email Hash
+
+#### The `Email hash` it creates a hash of the email you put in and checks if that hash has already been leaked, it's an attempt to use the API for free. But it's not 100% that it will work.
+
+#### It's the same thing you do as option 6 sends a hash that checks whether or not it's already `been leaked`.
+
+>Part of the code
+
+```sh
+email_1 = input("Put your Email:" )
+            colorama.init()
+            print(Fore.RED)
+            print("\t")
+            Email = email_1
+            hash_password = hashlib.sha1(Email.encode('utf-8')).hexdigest().upper()
+            url = f"https://api.pwnedpasswords.com/range/{hash_password[:5]}"
+            req = requests.get(url)
+            hashes = req.text.split('\n')
+            pwned = False
+            for hash in hashes:
+                if hash.startswith(hash_password[5:]):
+                    pwned = True
+                    break
+            if pwned: 
+                print("[!] Yes, your email has been pwned.")
+            else:
+                print("[!] No, your email has not been pwned.")
+```
+
+#### If you want see more details
+
+| API |  Link |
+| ------ | ------ |
+|  haveibeenpwned | https://haveibeenpwned.com/API/v3#BreachModel
+
+</details>
+
+<details>
+ 
+<summary>Company</summary>
+
+# Company
+
+#### This option checks if any information from a company has already been leaked, such as sony.
+
+```sh
+
+Put the number: 5
+
+Put the Company:sony
+{"Name":"Sony","Title":"Sony","Domain":"sony.com","BreachDate":"2011-06-02","AddedDate":"2013-12-04T00:00:00Z","ModifiedDate":"2013-12-04T00:00:00Z","PwnCount":37103,"Description":"In 2011, Sony suffered breach after breach after breach &mdash; it was a <em>very</em> bad year for them. The breaches spanned various areas of the business ranging from the PlayStation network all the way through to the motion picture arm, Sony Pictures. A SQL Injection vulnerability in <a href=\"http://www.sonypictures.com\" target=\"_blank\" rel=\"noopener\">sonypictures.com</a> lead to <a href=\"http://www.troyhunt.com/2011/06/brief-sony-password-analysis.html\" target=\"_blank\" rel=\"noopener\">tens of thousands of accounts across multiple systems being exposed</a> complete with plain text passwords.","LogoPath":"https://haveibeenpwned.com/Content/Images/PwnedLogos/Sony.png","DataClasses":["Dates of birth","Email addresses","Genders","Names","Passwords","Phone numbers","Physical addresses","Usernames"],"IsVerified":true,"IsFabricated":false,"IsSensitive":false,"IsRetired":false,"IsSpamList":false,"IsMalware":false,"IsSubscriptionFree":false}
+Don't have nothing about this company: sony
+
+```
+
+### Note that for this to work you need to get the curl tool which in turn is already standard for any operating system to get it
+
+```sh
+   s.system(f'\ncurl https://haveibeenpwned.com/api/v3/breach/{Company}\n')
+```
+```sh
+   https://haveibeenpwned.com/api/v3/breach/sony
+```
+```sh
+   https://haveibeenpwned.com/api/v3/breach/adobe
+```
+</details>
+
+<details>
+ 
+<summary>Have i been pwned</summary>
 
 # Have i been pwned
 
@@ -263,24 +362,26 @@ Quantity: 20
 
 ```sh
 
-Strong, Weak or Have i been pwned: 3
+Put the namber: 6
 
-            /\   /\                       __ ___                                                            ___
-            /  |_|  \_____  ___  __ ____  |__|\_ |__   ____   ____   ____  ______ __  _  __ ____   ____   __| _/
-            /         \__  \ \  \/ // __ \ |  | | __ \_/ __ \_/ __ \ /    \ \____ \ \/ \/ //    \_/ __ \ / __ |
-            \    _    // __ \_\   /\  ___/_|  | | \_\ \  ___/_  ___/_   |  \|  |_\ \     /|   |  \  ___/_ /_/ |
-            \  | |  /(____  / \_/  \___  /|__| |___  /\___  /\___  /___|  /|   ___/ \/\_/ |___|  /\___  /____ |
-            \/   \/      \/           \/          \/     \/     \/     \/ |__|                \/     \/     \/
+                                              ___
+            ______ __  _  __ ____   ____   __| _/
+            \____ \\ \/ \/ //    \_/ __ \ / __ | 
+            |  |_\ \\     /|   |  \  ___/_ /_/ | 
+            |   ___/ \/\_/ |___|  /\___  /____ | 
+            |__|                \/     \/     \/ 
 
 
 Put your PASSWORD:
 
 ```
+</details>
+	
 ### So that's it, take advantage of your strong passwords. Goodbye.
 
 License & Copyright
 -----------------------
-MIT License Copyright (c) 2023 ~#M?x
+MIT License Copyright (c) 2024 ~#M?x
 
 
 | Libraries |  Links |
@@ -293,3 +394,5 @@ MIT License Copyright (c) 2023 ~#M?x
 | colorama | https://pypi.org/project/colorama/)https://pypi.org/project/colorama/
 | requests | https://pypi.org/project/requests/
 | hashlib  | https://docs.python.org/3/library/hashlib.html 
+| OS  | https://docs.python.org/3/library/os.html
+| Have I Been Pwned  | https://haveibeenpwned.com/API/Key
