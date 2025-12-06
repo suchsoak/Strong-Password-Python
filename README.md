@@ -64,7 +64,7 @@ Search if a company's data was breached (e.g., Sony, Adobe)
 
 ## 📋 License & Libraries
 
-**MIT License** © 2024 ~#M?x
+**MIT License** © 2025 ~#M?x
 
 | Library | Purpose |
 |---------|---------|
