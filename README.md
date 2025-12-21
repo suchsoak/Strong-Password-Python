@@ -62,7 +62,7 @@ Check without API key using SHA1 hash method
 ## 🏢 Company Breach Check
 Search if a company's data was breached (e.g., Sony, Adobe)
 
-## 📋 License & Libraries
+## 📋 License & Libraries.
 
 **MIT License** © 2025 ~#M?x
 
